@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bulk Upload | Fabulix</title>
+
+    <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-sm">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col menu_fixed">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title" style="padding-left: 0px;"><img src="images/issquared.png" style="width: 100%;"> <span></span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="tables_dynamic.html"><i class="fa fa-home"></i> <span class="nav-text">Table</span> <span class="fa fa-chevron-down"></span></a>
+                   
+                  </li>
+                  <li><a href="form.html"><i class="fa fa-edit"></i> <span class="nav-text">Forms</span> <span class="fa fa-chevron-down"></span></a>
+                    
+                  </li>
+                  <li><a href="timesheet.html"><i class="fa fa-desktop"></i> <span class="nav-text">TimeSheet</span> <span class="fa fa-chevron-down"></span></a>
+                   
+                  </li>
+                  <li><a><i class="fa fa-table"></i> <span class="nav-text">Tables</span><span class="fa fa-chevron-down"></span></a>
+                    
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> <span class="nav-text">Data Presentation</span> <span class="fa fa-chevron-down"></span></a>
+                   
+                  </li>
+                  <li><a><i class="fa fa-clone"></i> <span class="nav-text">Layouts</span> <span class="fa fa-chevron-down"></span></a>
+                   
+                  </li>
+                  <li><a><i class="fa fa-bug"></i> <span class="nav-text">Additional Pages</span> <span class="fa fa-chevron-down"></span></a>
+                    
+                  </li>
+                  <li><a><i class="fa fa-windows"></i> <span class="nav-text">Extras</span> <span class="fa fa-chevron-down"></span></a>
+                    
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i> <span class="nav-text">Multilevel Menu</span> <span class="fa fa-chevron-down"></span></a>
+                   
+                  </li>
+                </ul>
+              </div>
+            
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                  <li class="nav-item dropdown open nav-item-1" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">John Doe
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                        <a class="dropdown-item"  href="javascript:;">
+                          <span class="badge bg-red pull-right">50%</span>
+                          <span>Settings</span>
+                        </a>
+                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                      <a class="dropdown-item"  href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                  </li>
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class=" info-number" id="navbarDropdown1" aria-expanded="false">
+                      <i class="fa fa-th-large"></i>
+                    </a>
+                  </li>
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class=" info-number" id="navbarDropdown1" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                    </a>
+                  </li>
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class=" info-number" id="navbarDropdown1"  aria-expanded="false">
+                      <i class="fa fa-bell-o"></i>
+                    </a>
+                  </li>
+                  
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class=" info-number" id="navbarDropdown1" aria-expanded="false">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <!-- <div class="page-title">
+              <div class="title_left">
+                <h3>Users <small>Some examples to get you started</small></h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div> -->
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel row-radius">
+                  <div class="x_title">
+                    <h2>Bulk Uploads</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a><i class="fa fa-home" style="margin-right: 2px;"></i>Home<i class="fa fa-chevron-right" style="margin-left: 6px; font-size: 9px;"></i></a>
+                      </li>
+                      <li><a>Approval<i class="fa fa-chevron-right" style="margin-left: 6px; font-size: 9px;"></i></a>
+                      </li>
+                      <li><a style="color:blue !important;">Timesheet</a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div class="row">
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 cust-padding ">
+                        <div class="tile-stats">
+                          <div class="tiles-padding">
+                          <h3>Templates</h3>
+                          <div class="icon" style="background-color: #ffb007;">
+                            <i class="fa fa-list-alt"></i>
+                          </div>
+                        </div>
+                          <div class="clearfix"></div>
+                          <div class="tile-stats-2" style="border-left: 5px solid #ffb007;">
+                            <p>Procced Documents : 40</p>
+                            <p>In Process Documents : 0</p>
+                            <p>Failed Documents : 0</p>
+                          </div>
+                        </div> 
+                      </div>
+
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 cust-padding ">
+                        <div class="tile-stats">
+                          <div class="tiles-padding">
+                          <h3>Identities</h3>
+                          <div class="icon" style="background-color: #00b900; padding-left: 18px;">
+                            <i class="fa fa-user"></i>
+                          </div>
+                        </div>
+                          <div class="clearfix"></div>
+                          <div class="tile-stats-2" style="border-left: 5px solid #00b900;">
+                            <p>Procced Documents : 40</p>
+                            <p>In Process Documents : 0</p>
+                            <p>Failed Documents : 0</p>
+                          </div>
+                        </div> 
+                      </div>
+
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 cust-padding ">
+                        <div class="tile-stats">
+                          <div class="tiles-padding">
+                          <h3>Groups</h3>
+                          <div class="icon" style="background-color: #ff0707;">
+                            <i class="fa fa-users"></i>
+                          </div>
+                        </div>
+                          <div class="clearfix"></div>
+                          <div class="tile-stats-2" style="border-left: 5px solid #ff0707;">
+                            <p>Procced Documents : 40</p>
+                            <p>In Process Documents : 0</p>
+                            <p>Failed Documents : 0</p>
+                          </div>
+                        </div> 
+                      </div>
+
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 cust-padding ">
+                        <div class="tile-stats">
+                          <div class="tiles-padding">
+                          <h3>Roles</h3>
+                          <div class="icon" style="background-color: #079cff;">
+                            <i class="fa fa-thumbs-up"></i>
+                          </div>
+                        </div>
+                          <div class="clearfix"></div>
+                          <div class="tile-stats-2" style="border-left: 5px solid #079cff;">
+                            <p>Procced Documents : 40</p>
+                            <p>In Process Documents : 0</p>
+                            <p>Failed Documents : 0</p>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 ">
+                          <div class="tab" role="tabpanel">
+                              <!-- Nav tabs -->
+                              <div class="row tab-space" >
+                                <div class="col-md-8 col-sm-12 ">
+                                  <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab"> <i class="fa fa-file" aria-hidden="true"></i> Inprocess Documents</a></li>
+                                    <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file" aria-hidden="true"></i> Processed Documents</a></li>
+                                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-file" aria-hidden="true"></i> Failed Documents</a></li>
+                                  </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-12 ">
+                                <div class="form-group-s row">
+                                  <label class="control-label-s col-md-2 col-sm-6 ">Show</label>
+                                  <div class="col-md-4 col-sm-6 ">
+                                    <select class="form-control-s">
+                                      <option>All</option>
+                                    </select>
+                                  </div>
+
+                                  <label class="control-label-s col-md-2 col-sm-6 ">Category</label>
+                                  <div class="col-md-4 col-sm-6 ">
+                                    <select class="form-control-s">
+                                      <option>All</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content tabs">
+                                  <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                                        <div class="table-responsive">
+                                          <table class="table jambo_table bulk_action">
+                                            <thead>
+                                              <tr>
+                                                <th>
+                                                  <input type="checkbox" id="check-all" class="flat">
+                                                </th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Login Name</th>
+                                                <th>Primary Email</th>
+                                                <th>Supervisor Name</th>
+                                                <th>Employment Status</th>
+                                                <th >Workflow Status</th>
+                                                <!-- <th class="bulk-actions" colspan="7">
+                                                  <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                                </th> -->
+                                              </tr>
+                                            </thead>
+                    
+                                            <tbody>
+                                              <tr class="even pointer" style="background-color: #e1e1e1;">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td colspan="6">
+                                                  <div class="row" style="margin: 0;">
+                                                  <div class="col-cust"><span>==</span><input type="text" class="form-control-s" style="float:left; width: 40%;"></div>
+                                                  <div class="col-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left; width: 40%;"></div>
+                                                  <div class="col-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left; width: 40%;"></div>
+                                                  <div class="col-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left; width: 40%;"></div>
+                                                  <div class="col-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left; width: 40%;"></div>
+                                                  <div class="col-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left; width: 40%;"></div>
+                                                </div>
+                                                </td>
+                                                <!-- <td class="td-cust"><span>==</span><input type="text" class="form-control-s" style="float:left;"></td>
+                                                <td class="td-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left;"></td>
+                                                <td class="td-cust"><span> X  ==</span> <input type="text" class="form-control-s" style=" float: left;"></td>
+                                                <td class="td-cust"><span>X  == </span><input type="text" class="form-control-s" style=" float: left;"></td>
+                                                <td class="td-cust"><span>X  == </span><input type="text" class="form-control-s" style=" float: left;"></td>
+                                                <td class="td-cust"><span>X  == </span><input type="text" class="form-control-s" style=" float: left;"></td> -->
+                                                <td class="td-cust">All <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-success">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-warning">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer cust-tr-2">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class="td-cust">Sumanth</td>
+                                                <td class="td-cust">Thati</td>
+                                                <td class="td-cust">User -000200</td>
+                                                <td class="td-cust">thati@issquared.com</td>
+                                                <td class="td-cust">Sai Krishna B</td>
+                                                <td class="td-cust"><button type="button" class="btn btn-danger">Success</button></td>
+                                                <td class="td-cust"><span class="check-green"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                                </td>
+                                              </tr>
+                                              <!-- <tr class="odd pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000039</td>
+                                                <td class=" ">May 23, 2014 11:30:12 PM</td>
+                                                <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
+                                                </td>
+                                                <td class=" ">John Blank L</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$741.20</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000038</td>
+                                                <td class=" ">May 24, 2014 10:55:33 PM</td>
+                                                <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
+                                                </td>
+                                                <td class=" ">Mike Smith</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$432.26</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="odd pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000037</td>
+                                                <td class=" ">May 24, 2014 10:52:44 PM</td>
+                                                <td class=" ">121000204</td>
+                                                <td class=" ">Mike Smith</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$333.21</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000040</td>
+                                                <td class=" ">May 24, 2014 11:47:56 PM </td>
+                                                <td class=" ">121000210</td>
+                                                <td class=" ">John Blank L</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$7.45</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="odd pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000039</td>
+                                                <td class=" ">May 26, 2014 11:30:12 PM</td>
+                                                <td class=" ">121000208 <i class="error fa fa-long-arrow-down"></i>
+                                                </td>
+                                                <td class=" ">John Blank L</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$741.20</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="even pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000038</td>
+                                                <td class=" ">May 26, 2014 10:55:33 PM</td>
+                                                <td class=" ">121000203</td>
+                                                <td class=" ">Mike Smith</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$432.26</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="odd pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000037</td>
+                                                <td class=" ">May 26, 2014 10:52:44 PM</td>
+                                                <td class=" ">121000204</td>
+                                                <td class=" ">Mike Smith</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$333.21</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                    
+                                              <tr class="even pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000040</td>
+                                                <td class=" ">May 27, 2014 11:47:56 PM </td>
+                                                <td class=" ">121000210</td>
+                                                <td class=" ">John Blank L</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$7.45</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr>
+                                              <tr class="odd pointer">
+                                                <td class="a-center ">
+                                                  <input type="checkbox" class="flat" name="table_records">
+                                                </td>
+                                                <td class=" ">121000039</td>
+                                                <td class=" ">May 28, 2014 11:30:12 PM</td>
+                                                <td class=" ">121000208</td>
+                                                <td class=" ">John Blank L</td>
+                                                <td class=" ">Paid</td>
+                                                <td class="a-right a-right ">$741.20</td>
+                                                <td class=" last"><a href="#">View</a>
+                                                </td>
+                                              </tr> -->
+                                            </tbody>
+                                          </table>
+                                        </div>
+                              </div>
+                         
+                                  <div role="tabpanel" class="tab-pane fade" id="Section2">
+                                     
+                                  </div>
+                                  <div role="tabpanel" class="tab-pane fade" id="Section3">
+                                     
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+
+          
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Issquared - web ui assignment
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
+  </body>
+</html>
